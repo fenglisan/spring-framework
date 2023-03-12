@@ -20,6 +20,9 @@ ext {
 
 configure(allprojects) { project ->
 	repositories {
+        maven { url 'https://maven.aliyun.com/nexus/content/groups/public/' }
+        maven { url 'https://maven.aliyun.com/repository/spring' }
+        maven { url 'https://maven.aliyun.com/nexus/content/repositories/jcenter' }
 		mavenCentral()
 		maven {
 			url "https://repo.spring.io/milestone"
@@ -29,12 +32,14 @@ configure(allprojects) { project ->
 			}
 		}
 		maven { url "https://repo.spring.io/libs-spring-framework-build" }
+        maven { url "https://repo.spring.io/plugins-release"}
 		if (version.contains('-')) {
 			maven { url "https://repo.spring.io/milestone" }
 		}
 		if (version.endsWith('-SNAPSHOT')) {
 			maven { url "https://repo.spring.io/snapshot" }
 		}
+
 	}
 	configurations.all {
 		resolutionStrategy {
