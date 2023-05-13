@@ -58,5 +58,3 @@ settings.gradle.projectsLoaded {
 		}
 	}
 }
-include 'spring_fym_test'
-
